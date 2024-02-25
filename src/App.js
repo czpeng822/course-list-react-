@@ -9,10 +9,16 @@ import React, { useState } from 'react';
 
 function App() {
   const [courseList, setCourseList] = useState(["MSCS3021","MSCS3025","MSCS3050","MSCS3254"]);
+  
+
 
   const handleAddCourse = (newCourse) => {
     setCourseList([...courseList, newCourse]);
   };
+
+
+
+
 
   return (
     <div className="container">

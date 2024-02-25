@@ -3,7 +3,7 @@ import CourseItem from './CourseItem.js';
 import React, { useState,useEffect } from 'react';
 
 
-function Output({ onAddCourse,courseList, setCourseList}) {
+function Output({ courseList, setCourseList}) {
  
 //check wheather hide the clear button and line.
   const [LineVisible, setLineVisible] = useState(true);
@@ -33,14 +33,12 @@ function Output({ onAddCourse,courseList, setCourseList}) {
     }
   }
 
-  function updateCourse(item,newCourse){
-    const confirmed = window.confirm('Are you sure?');
-    if (confirmed) {
-      deleteCourse(item);
-      onAddCourse(newCourse)
-    }
+  function updateCourseContent(oldCourse){
+      let olditem=oldCourse;
+      console.log(olditem);
   }
 
+  
   return (
     <div>
       <div className="filter">
@@ -55,7 +53,7 @@ function Output({ onAddCourse,courseList, setCourseList}) {
 
       <ul id="item-list" className="items">
         {courseList.map((course, index) => (
-          <CourseItem key={index} deleteCourse={() => deleteCourse(course)}>
+          <CourseItem key={index} deleteCourse={() => deleteCourse(course)} updateCourseContent={updateCourseContent}>
             {course}
           </CourseItem>
         ))}

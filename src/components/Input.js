@@ -1,9 +1,11 @@
 import './Input.css';
 import React, { useState } from 'react';
+import Output from './Output.js'
 
 function Input({ onAddCourse, courseList}){
   const [newCourse, setNewCourse] = useState('');
   const [isEditMode, setIsEditMode] = useState(false);
+  const [olditem, setolditem] = useState('');
 
   function InputValue(event) {
     setNewCourse(event.target.value);
@@ -24,6 +26,12 @@ function Input({ onAddCourse, courseList}){
     setNewCourse('');
   }
 
+
+  
+
+
+
+  
   return (
     <form id="item-form" onSubmit={AddCourse}>
       <div className="form-control">
